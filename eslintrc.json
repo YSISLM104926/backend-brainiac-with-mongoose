@@ -11,6 +11,11 @@
     "no-unused-expressions": "error",
     "prefer-const": "error",
     "no-console": "warn",
-    "no-undef": "error"
+    "no-undef": "off"
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020,
+    "project": "./tsconfig.json"
   }
 }
