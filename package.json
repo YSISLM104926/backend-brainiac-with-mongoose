@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:prod": "node ./dist/server.js",
+    "start:dev": "npx ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "eslint --fix \"**/*.{ts,tsx}\"",
@@ -29,6 +31,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.2"
   }
 }
