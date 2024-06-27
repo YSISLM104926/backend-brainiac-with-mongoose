@@ -67,7 +67,7 @@ const localGuardianSchema = new Schema<LocalGuardian>({
 });
 
 const studentSchema = new Schema<Student>({
-  id: { type: String },
+  id: { type: String, required: true, unique: true },
   name: {
     type: userNameSchema,
     required: [true, 'Name is required'],
@@ -76,20 +76,19 @@ const studentSchema = new Schema<Student>({
     type: String,
     enum: {
       values: ['male', 'female'],
-      message: 'The gender need to be Male or Female',
+      message: '{VALUE} is not valid',
     },
     required: [true, 'Gender is required'],
   },
   dateOfBirth: { type: String },
-  email: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
   contactNo: { type: String, required: true },
   emergencyContactNo: { type: String, required: true },
   bloodGroup: {
     type: String,
     enum: {
       values: ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'],
-      message:
-        "The blood group need to be 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'",
+      message: '{VALUE} is not valid',
     },
     required: [true, 'BloodGroup is required'],
   },
